@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Object - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>log-stats.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">BasicObject
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-errors">#errors</a>
+    
+    <li ><a href="#method-i-help">#help</a>
+    
+    <li ><a href="#method-i-hourly">#hourly</a>
+    
+    <li ><a href="#method-i-requesters">#requesters</a>
+    
+    <li ><a href="#method-i-resources">#resources</a>
+    
+    <li ><a href="#method-i-verifyFile">#verifyFile</a>
+    
+    <li ><a href="#method-i-verifyFlagNum">#verifyFlagNum</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./GetoptLong.html">GetoptLong</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Object</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-errors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">errors</span><span
+            class="method-args">(infileName)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method errors: hashes resources with errors and number of times
+called</p>
+
+<h4 id="method-i-errors-label-Attribute">Attribute<span><a href="#method-i-errors-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>infileName : name of file with log stats</p>
+</li></ul>
+
+<h4 id="method-i-errors-label-Options">Options<span><a href="#method-i-errors-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-errors-label-Example">Example<span><a href="#method-i-errors-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-errors-label-%3E+errors%28.%2Faccess_log_2012_02_21%29">&gt; errors(./access_log_2012_02_21)<span><a href="#method-i-errors-label-%3E+errors%28.%2Faccess_log_2012_02_21%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="errors-source">
+            <pre><span class="ruby-comment"># File log-stats.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">errors</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">verifyFile</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">infile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infileName</span>, <span class="ruby-string">&#39;r&#39;</span>)
+        <span class="ruby-identifier">regex</span> = <span class="ruby-regexp">/\s((4|5)[0-9][0-9])\s(\d{3}|-)/</span>
+        <span class="ruby-identifier">resource</span> = <span class="ruby-regexp">/\&quot;[A-Z]+\s(.*)HTTP/</span>
+        <span class="ruby-identifier">matches</span> = {}
+        <span class="ruby-identifier">infile</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regex</span>
+                        <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">resource</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">line</span>)
+                        <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">$~</span>.<span class="ruby-identifier">captures</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_sym</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">thisMatch</span>)
+                                <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] = <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        }
+        <span class="ruby-identifier">$matches</span> = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">sort_by</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-operator">-</span><span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>),<span class="ruby-identifier">k</span>]}]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- errors-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- errors-method -->
+
+    
+      <div id="method-i-help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">help</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method help: prints the usage of this script</p>
+
+<h4 id="method-i-help-label-Attribute">Attribute<span><a href="#method-i-help-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-help-label-Options">Options<span><a href="#method-i-help-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-help-label-Example">Example<span><a href="#method-i-help-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-help-label-%3E+help">&gt; help<span><a href="#method-i-help-label-%3E+help">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="help-source">
+            <pre><span class="ruby-comment"># File log-stats.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">help</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-value">&lt;&lt;-EOF
+
+        ruby log-stats.rb [OPTION] PATH/TO/FILE
+
+        --help:
+                displays usage/options and exits
+
+        --resources
+                displays the counted resources in descending order
+
+        --requesters
+                displays the counted IPs requested in descending order
+
+        --errors
+                displays the counted resources with HTTP status codes 400-599
+
+        --hourly
+                displays the total number of requests within each hour, sorted by hour
+
+        EOF</span>
+        <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- help-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- help-method -->
+
+    
+      <div id="method-i-hourly" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hourly</span><span
+            class="method-args">(infileName)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method hourly: hashes number of resources per hour</p>
+
+<h4 id="method-i-hourly-label-Attribute">Attribute<span><a href="#method-i-hourly-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>infileName : name of file with log stats</p>
+</li></ul>
+
+<h4 id="method-i-hourly-label-Options">Options<span><a href="#method-i-hourly-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-hourly-label-Example">Example<span><a href="#method-i-hourly-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-hourly-label-%3E+hourly%28.%2Faccess_log_2012_02_21%29">&gt; hourly(./access_log_2012_02_21)<span><a href="#method-i-hourly-label-%3E+hourly%28.%2Faccess_log_2012_02_21%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="hourly-source">
+            <pre><span class="ruby-comment"># File log-stats.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hourly</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">verifyFile</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">infile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infileName</span>, <span class="ruby-string">&#39;r&#39;</span>)
+        <span class="ruby-identifier">regex</span> = <span class="ruby-regexp">/\d{4}:(\d{2}):(\d{2}):(\d{2})\s/</span>
+        <span class="ruby-identifier">matches</span> = {}
+        <span class="ruby-identifier">infile</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regex</span>
+                        <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">regex</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">line</span>)
+                        <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">$~</span>.<span class="ruby-identifier">captures</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;:00&quot;</span>
+                        <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">thisMatch</span>.<span class="ruby-identifier">to_sym</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">thisMatch</span>)
+                                <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] = <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        }
+        <span class="ruby-identifier">$matches</span> = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">sort_by</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hourly-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hourly-method -->
+
+    
+      <div id="method-i-requesters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">requesters</span><span
+            class="method-args">(infileName)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method requesters: hashes requesting IPs and number of times
+called</p>
+
+<h4 id="method-i-requesters-label-Attribute">Attribute<span><a href="#method-i-requesters-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>infileName : name of file with log stats</p>
+</li></ul>
+
+<h4 id="method-i-requesters-label-Options">Options<span><a href="#method-i-requesters-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-requesters-label-Example">Example<span><a href="#method-i-requesters-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-requesters-label-%3E+requesters%28.%2Faccess_log_2012_02_21%29">&gt; requesters(./access_log_2012_02_21)<span><a href="#method-i-requesters-label-%3E+requesters%28.%2Faccess_log_2012_02_21%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="requesters-source">
+            <pre><span class="ruby-comment"># File log-stats.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">requesters</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">verifyFile</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">infile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infileName</span>, <span class="ruby-string">&#39;r&#39;</span>)
+        <span class="ruby-identifier">regex</span> = <span class="ruby-regexp">/\A\d{1,3}\.\d{1,3}\.\d{1,3}/</span>
+        <span class="ruby-identifier">infile</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regex</span>
+                <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">regex</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">line</span>)
+                <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">thisMatch</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_sym</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">thisMatch</span>)
+                        <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] = <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        }
+        <span class="ruby-identifier">$matches</span> = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;.&#39;</span>).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">numGroup</span><span class="ruby-operator">|</span> <span class="ruby-identifier">numGroup</span>.<span class="ruby-identifier">to_i</span>}]}.<span class="ruby-identifier">reverse!</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- requesters-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- requesters-method -->
+
+    
+      <div id="method-i-resources" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resources</span><span
+            class="method-args">(infileName)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method resources: hashes resources and number of times called</p>
+
+<h4 id="method-i-resources-label-Attribute">Attribute<span><a href="#method-i-resources-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>infileName : name of file with log stats</p>
+</li></ul>
+
+<h4 id="method-i-resources-label-Options">Options<span><a href="#method-i-resources-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-resources-label-Example">Example<span><a href="#method-i-resources-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-resources-label-%3E+resources%28.%2Faccess_log_2012_02_21%29">&gt; resources(./access_log_2012_02_21)<span><a href="#method-i-resources-label-%3E+resources%28.%2Faccess_log_2012_02_21%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="resources-source">
+            <pre><span class="ruby-comment"># File log-stats.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resources</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">verifyFile</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-identifier">infile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infileName</span>, <span class="ruby-string">&#39;r&#39;</span>)
+        <span class="ruby-identifier">regex</span> = <span class="ruby-regexp">/&quot;[A-Z]+\s(.*)HTTP/</span>
+        <span class="ruby-identifier">infile</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regex</span>
+                        <span class="ruby-identifier">thisMatch</span> = <span class="ruby-identifier">$~</span>.<span class="ruby-identifier">captures</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_sym</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">thisMatch</span>)
+                                <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">$matches</span>[<span class="ruby-identifier">thisMatch</span>] = <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        }
+        <span class="ruby-identifier">$matches</span> = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">$matches</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-operator">-</span><span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>), <span class="ruby-identifier">k</span>] }]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- resources-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- resources-method -->
+
+    
+      <div id="method-i-verifyFile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifyFile</span><span
+            class="method-args">(infileName)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method verifyFile: checks existence of given file</p>
+
+<h4 id="method-i-verifyFile-label-Attribute">Attribute<span><a href="#method-i-verifyFile-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>infileName : name of file with log stats</p>
+</li></ul>
+
+<h4 id="method-i-verifyFile-label-Options">Options<span><a href="#method-i-verifyFile-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-verifyFile-label-Example">Example<span><a href="#method-i-verifyFile-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-verifyFile-label-%3E+verifyFile%28.%2Faccess_log_2012_02_21%29">&gt; verifyFile(./access_log_2012_02_21)<span><a href="#method-i-verifyFile-label-%3E+verifyFile%28.%2Faccess_log_2012_02_21%29">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="verifyFile-source">
+            <pre><span class="ruby-comment"># File log-stats.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifyFile</span>(<span class="ruby-identifier">infileName</span>)
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">infile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">infileName</span>, <span class="ruby-string">&#39;r&#39;</span>)
+        <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;File error! #{e}&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">$stdError</span>
+                <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifyFile-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifyFile-method -->
+
+    
+      <div id="method-i-verifyFlagNum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifyFlagNum</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal method verifyFlagNum: ensures only one flag has been used</p>
+
+<h4 id="method-i-verifyFlagNum-label-Attribute">Attribute<span><a href="#method-i-verifyFlagNum-label-Attribute">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-verifyFlagNum-label-Options">Options<span><a href="#method-i-verifyFlagNum-label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<ul><li>
+<p>none</p>
+</li></ul>
+
+<h4 id="method-i-verifyFlagNum-label-Example">Example<span><a href="#method-i-verifyFlagNum-label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<h1 id="method-i-verifyFlagNum-label-%3E+verifyFlagNum">&gt; verifyFlagNum<span><a href="#method-i-verifyFlagNum-label-%3E+verifyFlagNum">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+          
+          
+
+          
+          <div class="method-source-code" id="verifyFlagNum-source">
+            <pre><span class="ruby-comment"># File log-stats.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifyFlagNum</span>
+        <span class="ruby-identifier">optsEx</span> = [<span class="ruby-string">&#39;--help&#39;</span>, <span class="ruby-string">&#39;--resources&#39;</span>, <span class="ruby-string">&#39;--requesters&#39;</span>, <span class="ruby-string">&#39;--errors&#39;</span>, <span class="ruby-string">&#39;--hourly&#39;</span>]
+        <span class="ruby-identifier">optCount</span> = <span class="ruby-value">0</span>
+        <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">optsEx</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">arg</span>)
+                        <span class="ruby-identifier">optCount</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+        }
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">optCount</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+                <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Too many options selected&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">$stdError</span>
+                <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifyFlagNum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifyFlagNum-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
